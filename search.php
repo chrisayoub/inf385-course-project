@@ -60,10 +60,10 @@ function getResults($query) {
     return $result;
 }
 
-$name = $_POST['name'];
+$name = sanitize($_POST['name']);
 $state = $_POST['state'];
 $gender = $_POST['gender'];
-$year = $_POST['year'];
+$year = $_POST['year']; // No need to sanitize, parsing.
 $length = $_POST['length'];
 
 $query = getQuery($name, $state, $gender, $year, $length);
