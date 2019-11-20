@@ -73,9 +73,8 @@ function mapToOptionList($map) {
 
           <div class="col-3 ">
             <div class="site-logo">
-              <a href="index.html">Call Me
+                Call Me
                 <br>by Your Name
-              </a>
             </div>
           </div>
 
@@ -91,13 +90,13 @@ function mapToOptionList($map) {
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation" id="site-menu">
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
                 <li class="active">
-                  <a href="index.html" class="nav-link">Home</a>
+                  <a href="index.php" class="nav-link">Home</a>
                 </li>
                 <li>
-                  <a href="index.html#search" class="nav-link">Search</a>
+                  <a href="index.php#search" class="nav-link">Search</a>
                 </li>
                 <li>
-                  <a href="index.html#collection" class="nav-link">Collections</a>
+                  <a href="index.php#collections" class="nav-link">Collections</a>
                 </li>
                 <li>
                   <a href="about.html" class="nav-link">About Us</a>
@@ -123,11 +122,12 @@ function mapToOptionList($map) {
       </div>
     </div>
 
-    <form action="search.php" method="post" id="search">
-      <div class="search-filter">
+    <form action="search.php" method="post" id="search_form">
+      <a id="search"></a>
+      <div class="search-filter" id="">
         <div class="container">
           <div class="search-filter-wrap nav">
-            <a href="#for-rent" class="active" data-toggle="tab" id="rent-tab" aria-controls="rent" aria-selected="true">Search</a>
+            <a class="active" data-toggle="tab" id="rent-tab" aria-controls="rent" aria-selected="true">Search</a>
           </div>
         </div>
       </div>
@@ -179,6 +179,7 @@ function mapToOptionList($map) {
     </form>
 
     <div class="site-section bg-light" id="collection">
+      <a id="collections"></a>
       <div class="container">
 
         <div class="row justify-content-center mb-5">
