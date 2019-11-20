@@ -16,22 +16,27 @@ const lengthMap = [
 
 // Gets a query based on the supplied fields
 function getQuery($name, $state, $gender, $year, $length) {
-    $yearVal = intval($year);
-    if ($yearVal == 0) {
-        print("<p>Notice: year was ignored because not a valid year string.</p>");
+    $yearVal = -1;
+    if ($year !== BLANK_TEXT_FIELD) {
+        $yearVal = intval($year);
+        if ($yearVal == 0) {
+            print("<p>Notice: year was ignored because not a valid year string.</p>");
+        }
+    }
+    if ($name == BLANK_TEXT_FIELD) {
+        // For performance reasons... don't let them query everything
+        print("<p>Error: must specify a name.");
+        return "";
     }
 
-    $query = "SELECT * FROM names WHERE true = true ";
-    if ($name !== BLANK_TEXT_FIELD) {
-        $query .= "AND name = '$name' ";
-    }
+    $query = "SELECT * FROM names WHERE name = '$name' ";
     if ($state !== BLANK_FIELD) {
         $query .= "AND state = $state ";
     }
-    if ($gender !== BLANK_TEXT_FIELD) {
+    if ($gender !== BLANK_FIELD) {
         $query .= "AND sex = '$gender' ";
     }
-    if ($yearVal != 0) {
+    if ($yearVal > 0) {
         $query .= "AND year = $year ";
     }
     if ($length !== BLANK_FIELD) {

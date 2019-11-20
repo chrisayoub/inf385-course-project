@@ -150,8 +150,6 @@ function mapToOptionList($map) {
                   <?php
                     mapToOptionList(getStates());
                   ?>
-<!--                  <option value=""></option>-->
-<!--                  <option value=""></option>-->
                 </select>
               </div>
               <div class="col-md-4 form-group">
