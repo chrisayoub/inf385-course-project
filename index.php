@@ -23,6 +23,35 @@
 
 </head>
 
+<!-- Custom PHP functions -->
+<?php
+
+// DB credentials
+include 'db.php';
+
+// Get states from database, mapping ID to long name
+function getStates() {
+    global $db;
+    $result = [];
+
+    $state_query = "SELECT * FROM states";
+    $states = mysqli_query($db, $state_query);
+    while ($row = mysqli_fetch_array($states)) {
+        $id = $row['id'];
+        $name = $row['fullName'];
+        $result[$id] = $name;
+    }
+    return $result;
+}
+
+// Take a map and print the option list
+function mapToOptionList($map) {
+    foreach ($map as $id => $value) {
+        print("<option value='$id'>$value</option>");
+    }
+}
+?>
+
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
 
@@ -94,7 +123,7 @@
       </div>
     </div>
 
-    <form action="" id="search">
+    <form action="search.php" method="post" id="search">
       <div class="search-filter">
         <div class="container">
           <div class="search-filter-wrap nav">
@@ -109,32 +138,36 @@
 
             <div class="row">
               <div class="col-md-4 form-group">
-                <select name="" id="" class="form-control w-100">
-                  <option value="">All Genders</option>
-                  <option value="">Male</option>
-                  <option value="">Female</option>
+                <select name="gender" class="form-control w-100">
+                  <option value="all">All Genders</option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
                 </select>
               </div>
               <div class="col-md-4 form-group">
-                <select name="" id="" class="form-control w-100">
-                  <option value="">All States</option>
-                  <option value=""></option>
-                  <option value=""></option>
+                <select name="state" id="" class="form-control w-100">
+                  <option value="all">All States</option>
+                  <?php
+                    mapToOptionList(getStates());
+                  ?>
+<!--                  <option value=""></option>-->
+<!--                  <option value=""></option>-->
                 </select>
               </div>
               <div class="col-md-4 form-group">
-                <select name="" id="" class="form-control w-100">
-                  <option value="">Any Length</option>
-                  <option value="">2-4 Letters</option>
-                  <option value="">5-7 Letters</option>
-                  <option value="">8-12 Letters</option>
+                <select name="length" id="" class="form-control w-100">
+                  <option value="all">Any Length</option>
+                  <option value="2-4">2-4 Letters</option>
+                  <option value="5-7">5-7 Letters</option>
+                  <option value="8-12">8-12 Letters</option>
+                  <option value="13+">13+ Letters</option>
                 </select>
               </div>
               <div class="col-md-4 form-group">
-                <input type="text" class="form-control" placeholder="Name">
+                <input type="text" class="form-control" name="name" placeholder="Name">
               </div>
               <div class="col-md-4 form-group">
-                <input type="text" class="form-control" placeholder="4-digit Year of Birth">
+                <input type="text" class="form-control" name="year" placeholder="4-Digit Year of Birth">
               </div>
             </div>
             <div class="row">
@@ -210,24 +243,27 @@
     <footer class="site-footer ">
       <div class="container ">
         <div class="row ">
-          <div class="col-md-4 ">
-            <h3 class="text-white h5 mb-3 ">Subscribe</h3>
-            <form action=" " class="d-flex ">
-              <input type="text " class="form-control mr-3 " placeholder="Enter your email ">
-              <input type="submit " class="btn btn-primary text-white " value="Send" style="width:100px;">
-            </form>
-          </div>
-          <div class="col-md-3 ml-auto ">
-            <h3 class="text-white h5 mb-3 ">Subscribe</h3>
-            <ul class="list-unstyled menu-arrow ">
-              <li>
-                <a href="# ">About Us</a>
-              </li>
-              <li>
-                <a href="# ">Contact Us</a>
-              </li>
-            </ul>
-          </div>
+
+<!--          <div class="col-md-4 ">-->
+<!--            <h3 class="text-white h5 mb-3 ">Subscribe</h3>-->
+<!--            <form action=" " class="d-flex ">-->
+<!--              <input type="text " class="form-control mr-3 " placeholder="Enter your email ">-->
+<!--              <input type="submit " class="btn btn-primary text-white " value="Send" style="width:100px;">-->
+<!--            </form>-->
+<!--          </div>-->
+<!--            -->
+<!--          <div class="col-md-3 ml-auto ">-->
+<!--            <h3 class="text-white h5 mb-3 ">Subscribe</h3>-->
+<!--            <ul class="list-unstyled menu-arrow ">-->
+<!--              <li>-->
+<!--                <a href="# ">About Us</a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a href="# ">Contact Us</a>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
           <div class="col-md-4 ">
             <h3 class="text-white h5 mb-3 ">About</h3>
             <p>Call Me by Your Name, Group Air, INF385M</p>
