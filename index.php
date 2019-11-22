@@ -127,7 +127,7 @@ function mapToOptionList($map) {
       <div class="search-filter" id="">
         <div class="container">
           <div class="search-filter-wrap nav">
-            <a class="active" data-toggle="tab" id="rent-tab" aria-controls="rent" aria-selected="true">Search</a>
+            <a to tunneclass="active" data-toggle="tab" id="rent-tab" aria-controls="rent" aria-selected="true">Search</a>
           </div>
         </div>
       </div>
@@ -137,6 +137,9 @@ function mapToOptionList($map) {
           <div class="tab-pane active" id="for-rent" role="tabpanel">
 
             <div class="row">
+                <div class="col-md-4 form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Name *">
+                </div>
               <div class="col-md-4 form-group">
                 <select name="gender" class="form-control w-100">
                   <option value="all">All Genders</option>
@@ -152,21 +155,24 @@ function mapToOptionList($map) {
                   ?>
                 </select>
               </div>
-              <div class="col-md-4 form-group">
-                <select name="length" id="" class="form-control w-100">
-                  <option value="all">Any Length</option>
-                  <option value="2-4">2-4 Letters</option>
-                  <option value="5-7">5-7 Letters</option>
-                  <option value="8-12">8-12 Letters</option>
-                  <option value="13+">13+ Letters</option>
-                </select>
-              </div>
-              <div class="col-md-4 form-group">
-                <input type="text" class="form-control" name="name" placeholder="Name">
-              </div>
+
+<!--              <div class="col-md-4 form-group">-->
+<!--                <select name="length" id="" class="form-control w-100">-->
+<!--                  <option value="all">Any Length</option>-->
+<!--                  <option value="2-4">2-4 Letters</option>-->
+<!--                  <option value="5-7">5-7 Letters</option>-->
+<!--                  <option value="8-12">8-12 Letters</option>-->
+<!--                  <option value="13+">13+ Letters</option>-->
+<!--                </select>-->
+<!--              </div>-->
+
               <div class="col-md-4 form-group">
                 <input type="text" class="form-control" name="year" placeholder="4-Digit Year of Birth">
               </div>
+
+                <div class="col-md-4 form-group" style="color: black">
+                    <p>* = required</p>
+                </div>
             </div>
             <div class="row">
               <div class="col-md-4">
