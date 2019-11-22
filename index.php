@@ -114,7 +114,7 @@ function mapToOptionList($map) {
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
-              <span class="h4">A collection over 31595 unique names</span>
+              <span class="h4">A collection of over 31595 unique names</span>
               <h1 class="mb-2">Find the one!</h1>
             </div>
           </div>
@@ -127,7 +127,7 @@ function mapToOptionList($map) {
       <div class="search-filter" id="">
         <div class="container">
           <div class="search-filter-wrap nav">
-            <a to tunneclass="active" data-toggle="tab" id="rent-tab" aria-controls="rent" aria-selected="true">Search</a>
+            <a to tunneclass="active" data-toggle="tab" id="rent-tab" aria-controls="rent" aria-selected="true">Search a name</a>
           </div>
         </div>
       </div>
