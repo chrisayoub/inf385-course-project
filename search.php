@@ -1,6 +1,9 @@
 <head>
     <!--    Chart -->
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <?php
@@ -116,5 +119,6 @@ $graphTitle = "$name ($graphTitleGender, $graphTitleState)";
         chart.render();
     }
 </script>
-    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <div id="chartContainer" style="height: 75%; width: 100%;"></div>
+    <a href="index.php"><h1>< Back</h1></a>
 </body>
