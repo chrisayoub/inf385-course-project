@@ -1,35 +1,30 @@
+<html>
 <head>
     <title>Random Name Generator </title>
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
+<body>
 <?php
-// DB credentials
-// include 'db.php';
-//
-// function getQuery($gender) {
-//     $query = "SELECT name FROM distinctNamesWithSex WHERE sex='$gender' ORDER BY RAND() LIMIT 1");
-//     return $query;
-// }
-//
-// function getResults($query) {
-//     global $db;
-//     $result = [];
-//
-//     $rows = mysqli_query($db, $query);
-//     while ($row = mysqli_fetch_array($rows)) {
-//         array_push($result, $row);
-//     }
-//     return $result;
-// }
+// report mysql bug to php
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-// Get the gender
+// DB credentials
+ include 'db.php';
+
+function getQuery($gender) {
+    $query = "SELECT name FROM distinctNamesWithSex WHERE sex='$gender' ORDER BY RAND() LIMIT 1";
+    return $query;
+}
+
 $gender = $_POST['gender'];
-print "<p>$gender</p>";
-// $query = getQuery($gender);
-// $result = getResults($query);
-//
-// print "<h3 class="heading-29201 text-center">Name your baby $result[0] .</h3>";
+$query = getQuery($gender);
+$rows = mysqli_query($db, $query);
+while ($row = mysqli_fetch_array($rows)) {
+        print "<h2>Name your baby $row[name] .</h2>";
+    }
+
 ?>
+</body>
+</html>
