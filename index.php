@@ -234,9 +234,10 @@ function mapToOptionList($map) {
               <div class="post-entry-1-contents ">
 
                 <h2>
-                  <a href="single.html ">A Guide to Choosing the Baby Name</a>
+                  <a href="single.html">A Guide to Choosing a Baby Name</a>
                 </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
+                <p>A guide to choosing a baby name. If you find it too complicated, there is a random name generator. Your baby
+                will understand someday in the future. </p>
               </div>
             </div>
           </div>
