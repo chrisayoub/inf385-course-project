@@ -1280,6 +1280,10 @@ h1, h2, h3, h4, h5,
     padding-top: 4rem; }
 
 /* Search */
+.tab-pane {
+  margin-bottom:50px;
+}
+
 .search-filter {
   background: #F0B400; }
   .search-filter .search-filter-wrap {

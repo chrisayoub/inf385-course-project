@@ -122,24 +122,26 @@ function mapToOptionList($map) {
       </div>
     </div>
 
-    <form action="search.php" method="post" id="search_form">
-      <a id="search"></a>
-      <div class="search-filter" id="">
-        <div class="container">
-          <div class="search-filter-wrap nav">
-            <a to tunneclass="active" data-toggle="tab" id="rent-tab" aria-controls="rent" aria-selected="true">Search a name</a>
-          </div>
+    <!-- <a id="search"></a> -->
+    <div class="search-filter" id="">
+      <div class="container">
+        <div class="search-filter-wrap nav">
+          <a href="#search" class="active" data-toggle="tab" id="search-tab" aria-controls="search" aria-selected="true">Search a Name</a>
+          <a href="#random" class="" data-toggle="tab" id="random-tab" aria-controls="random" aria-selected="false">Random Generator</a>
         </div>
       </div>
+    </div>
 
-      <div class="search-tabpane pb-5">
+    <div class="search-tabpane pb-5">
         <div class="container tab-content">
-          <div class="tab-pane active" id="for-rent" role="tabpanel">
+          <div class="tab-pane active" id="search" role="tabpanel">
+
+            <form action="search.php" method="post" id="search_form">
 
             <div class="row">
-                <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" name="name" placeholder="Name *">
-                </div>
+              <div class="col-md-4 form-group">
+                <input type="text" class="form-control" name="name" placeholder="Name *">
+              </div>
               <div class="col-md-4 form-group">
                 <select name="gender" class="form-control w-100">
                   <option value="all">All Genders</option>
@@ -155,34 +157,51 @@ function mapToOptionList($map) {
                   ?>
                 </select>
               </div>
-
-<!--              <div class="col-md-4 form-group">-->
-<!--                <select name="length" id="" class="form-control w-100">-->
-<!--                  <option value="all">Any Length</option>-->
-<!--                  <option value="2-4">2-4 Letters</option>-->
-<!--                  <option value="5-7">5-7 Letters</option>-->
-<!--                  <option value="8-12">8-12 Letters</option>-->
-<!--                  <option value="13+">13+ Letters</option>-->
-<!--                </select>-->
-<!--              </div>-->
-
               <div class="col-md-4 form-group">
                 <input type="text" class="form-control" name="year" placeholder="4-Digit Year of Birth">
               </div>
 
-                <div class="col-md-4 form-group" style="color: black">
-                    <p>* = required</p>
-                </div>
+              <div class="col-md-4 form-group" style="font-size: 24px; color: #333;">
+                <p>* = required</p>
+              </div>
             </div>
             <div class="row">
               <div class="col-md-4">
                 <input type="submit" class="btn btn-black py-3 btn-block" value="Submit">
               </div>
             </div>
+            </form>
+          </div>
+      
+          <div class="tab-pane" id="random" role="tabpanel" aria-labelledby="random-tab">
+
+            <form action="random.php" method="post" id="random_form">
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <select name="number" id="" class="form-control w-100">
+                   <option value="1">1</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                </select>
+              </div>
+              <div class="col-md-4 form-group">
+                <select name="gender" id="" class="form-control w-100">
+                  <option value="all">All Genders</option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                  <input type="submit" class="btn btn-black py-3 btn-block" value="Submit">
+                </div>
+            </div>
+            </form>
           </div>
         </div>
-      </div>
-    </form>
+    </div>
 
     <div class="site-section bg-light" id="collection">
       <a id="collections"></a>
