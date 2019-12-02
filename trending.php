@@ -92,7 +92,7 @@ function renderTrendingPage($genderCode, $genderFullName, $pageName) {
 
     print "<h1> Choose a year </h1>";
     print "<form method=GET action='$pageName' class='text-center'><select name='time'>";
-    for ($i = 2019; $i >= 2000; $i--) {
+    for ($i = 2018; $i >= 2000; $i--) {
         print "<option value='$i'> $i </option>";
     }
     print "</select>";

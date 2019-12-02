@@ -98,9 +98,9 @@ function mapToOptionList($map) {
                 <li>
                   <a href="index.php#collections" class="nav-link">Collections</a>
                 </li>
-                <li>
-                  <a href="about.html" class="nav-link">About Us</a>
-                </li>
+<!--                <li>-->
+<!--                  <a href="about.html" class="nav-link">About Us</a>-->
+<!--                </li>-->
               </ul>
             </nav>
           </div>
@@ -237,7 +237,7 @@ function mapToOptionList($map) {
                 <h2>
                   <a href="boys.php">Trending Boy Names</a>
                 </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
+                <p>View the top trending boy names from the past two decades.</p>
               </div>
             </div>
           </div>
@@ -251,25 +251,27 @@ function mapToOptionList($map) {
                 <h2>
                   <a href="girls.php">Trending Girl Names</a>
                 </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
+                <p>View the top trending girl names from the past two decades.</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-              <a href="single.html">
-                <img src="images/babies.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="post-entry-1-contents ">
 
-                <h2>
-                  <a href="single.html">A Guide to Choosing a Baby Name</a>
-                </h2>
-                <p>A guide to choosing a baby name. If you find it too complicated, there is a random name generator. Your baby
-                will understand someday in the future. </p>
-              </div>
-            </div>
-          </div>
+
+<!--          <div class="col-lg-4 col-md-6 mb-4">-->
+<!--            <div class="post-entry-1 h-100">-->
+<!--              <a href="single.html">-->
+<!--                <img src="images/babies.jpg" alt="Image" class="img-fluid">-->
+<!--              </a>-->
+<!--              <div class="post-entry-1-contents ">-->
+<!---->
+<!--                <h2>-->
+<!--                  <a href="single.html">A Guide to Choosing a Baby Name</a>-->
+<!--                </h2>-->
+<!--                <p>A guide to choosing a baby name. If you find it too complicated, there is a random name generator. Your baby-->
+<!--                will understand someday in the future. </p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
 
         </div>
       </div>
