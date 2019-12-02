@@ -176,6 +176,16 @@ function mapToOptionList($map) {
           <div class="tab-pane" id="random" role="tabpanel" aria-labelledby="random-tab">
 
             <form action="random.php" method="post" id="random_form">
+
+            <div class="row">
+                <div class="col-md-4 form-group" style="color: #333;">
+                    <p>Number of names</p>
+                </div>
+                <div class="col-md-4 form-group" style="color: #333;">
+                    <p>Gender of names</p>
+                </div>
+            </div>
+
             <div class="row">
               <div class="col-md-4 form-group">
                 <select name="number" id="" class="form-control w-100">
@@ -219,13 +229,13 @@ function mapToOptionList($map) {
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="post-entry-1 h-100">
-              <a href="boys.html">
+              <a href="boys.php">
                 <img src="images/boys.png" alt="Image" class="img-fluid">
               </a>
               <div class="post-entry-1-contents">
 
                 <h2>
-                  <a href="boys.html">Trending Boy Names</a>
+                  <a href="boys.php">Trending Boy Names</a>
                 </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
               </div>
@@ -233,13 +243,13 @@ function mapToOptionList($map) {
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="post-entry-1 h-100">
-              <a href="girls.html">
+              <a href="girls.php">
                 <img src="images/girls.jpeg" alt="Image" class="img-fluid">
               </a>
               <div class="post-entry-1-contents">
 
                 <h2>
-                  <a href="girls.html">Trending Girl Names</a>
+                  <a href="girls.php">Trending Girl Names</a>
                 </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
               </div>
