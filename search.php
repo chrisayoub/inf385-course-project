@@ -15,13 +15,6 @@ include 'db.php';
 const BLANK_FIELD = "all";
 const BLANK_TEXT_FIELD = "";
 
-//const lengthMap = [
-//    "2-4" => [2, 4],
-//    "5-7" => [5, 7],
-//    "8-12" => [8, 12],
-//    "13+" => [13, 20],
-//];
-
 // Gets a query based on the supplied fields
 function getQuery($name, $state, $gender, $year, $length) {
     $yearVal = -1;
@@ -49,12 +42,6 @@ function getQuery($name, $state, $gender, $year, $length) {
     if ($yearVal > 0) {
         $query .= "AND year = $year ";
     }
-//    if ($length !== BLANK_FIELD) {
-//        $pair = lengthMap[$length];
-//        $startLen = $pair[0];
-//        $endLen = $pair[1];
-//        $query .= "AND LENGTH(name) >= $startLen AND LENGTH(name) <= $endLen ";
-//    }
     $query .= "GROUP BY year ORDER BY year ";
 
     return $query;
