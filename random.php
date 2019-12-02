@@ -41,6 +41,7 @@ while ($row = mysqli_fetch_array($rows)) {
 }
 
 echo "</table>";
+backButton();
 ?>
 </body>
 </html>

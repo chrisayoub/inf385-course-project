@@ -120,5 +120,5 @@ $graphTitle = "$name ($graphTitleGender, $graphTitleState)";
     }
 </script>
     <div id="chartContainer" style="height: 75%; width: 100%;"></div>
-    <input style="margin-top: 32px;" type="button" onclick="history.back()" class="btn btn-black py-3 btn-block" value="< Back" />
+    <?php backButton(); ?>
 </body>
