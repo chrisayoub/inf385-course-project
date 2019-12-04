@@ -257,21 +257,20 @@ function mapToOptionList($map) {
           </div>
 
 
-<!--          <div class="col-lg-4 col-md-6 mb-4">-->
-<!--            <div class="post-entry-1 h-100">-->
-<!--              <a href="single.html">-->
-<!--                <img src="images/babies.jpg" alt="Image" class="img-fluid">-->
-<!--              </a>-->
-<!--              <div class="post-entry-1-contents ">-->
-<!---->
-<!--                <h2>-->
-<!--                  <a href="single.html">A Guide to Choosing a Baby Name</a>-->
-<!--                </h2>-->
-<!--                <p>A guide to choosing a baby name. If you find it too complicated, there is a random name generator. Your baby-->
-<!--                will understand someday in the future. </p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="post-entry-1 h-100">
+              <a href="unique.php">
+                <img src="images/unique.jpg" style="height:190px; width:330px" alt="Image" class="img-fluid">
+              </a>
+              <div class="post-entry-1-contents">
+
+                <h2>
+                  <a href="unique.php"The Most Unique Names</a>
+                </h2>
+                <p>Tired of having the same with others? Check out the most unique names here!</p>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
