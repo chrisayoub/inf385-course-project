@@ -65,6 +65,6 @@ if (empty($data)) {
     printChart($graphTitle, $data);
 }
 
-backButton();
+backButton("history.back()");
 printFooter();
 ?>
