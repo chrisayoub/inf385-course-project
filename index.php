@@ -98,9 +98,6 @@ function mapToOptionList($map) {
                 <li>
                   <a href="index.php#collections" class="nav-link">Collections</a>
                 </li>
-<!--                <li>-->
-<!--                  <a href="about.html" class="nav-link">About Us</a>-->
-<!--                </li>-->
               </ul>
             </nav>
           </div>
@@ -278,27 +275,6 @@ function mapToOptionList($map) {
     <footer class="site-footer ">
       <div class="container ">
         <div class="row ">
-
-<!--          <div class="col-md-4 ">-->
-<!--            <h3 class="text-white h5 mb-3 ">Subscribe</h3>-->
-<!--            <form action=" " class="d-flex ">-->
-<!--              <input type="text " class="form-control mr-3 " placeholder="Enter your email ">-->
-<!--              <input type="submit " class="btn btn-primary text-white " value="Send" style="width:100px;">-->
-<!--            </form>-->
-<!--          </div>-->
-<!--            -->
-<!--          <div class="col-md-3 ml-auto ">-->
-<!--            <h3 class="text-white h5 mb-3 ">Subscribe</h3>-->
-<!--            <ul class="list-unstyled menu-arrow ">-->
-<!--              <li>-->
-<!--                <a href="# ">About Us</a>-->
-<!--              </li>-->
-<!--              <li>-->
-<!--                <a href="# ">Contact Us</a>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </div>-->
-
           <div class="col-md-4 ">
             <h3 class="text-white h5 mb-3 ">About</h3>
             <p>Call Me by Your Name, Group Air, INF385M</p>
