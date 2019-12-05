@@ -1,18 +1,3 @@
-<html>
-<head>
-    <title>Random Name Generator </title>
-
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<style>
-body {
-    margin: 50px;
-}
-</style>
-
-<body>
-
 <?php
 
 // DB credentials
@@ -27,18 +12,19 @@ function getQuery($gender, $N) {
     return $query;
 }
 
+printHeader("Random Name Generator");
+
 $gender = $_POST['gender'];
 $N = $_POST['number'];
 $query = getQuery($gender, $N);
-$rows = mysqli_query($db, $query);
+$results = getResults($query);
 echo "<h1>Here are some options:</h1>";
 echo "<ul>";
-while ($row = mysqli_fetch_array($rows)) {
+foreach ($results as $row) {
     echo "<li>" . $row['name'] . "</li>";
 }
 echo "</ul>";
 
 backButton();
+printFooter();
 ?>
-</body>
-</html>

@@ -1,20 +1,10 @@
-<head>
-    <!--    Chart -->
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>Name Search</title>
-</head>
-
 <?php
 
 // DB credentials
 include 'db.php';
 
 // Gets a query based on the supplied fields
-function getQuery($name, $state, $gender, $year, $length) {
+function getQuery($name, $state, $gender, $year) {
     $yearVal = -1;
     if ($year !== BLANK_TEXT_FIELD) {
         $yearVal = intval($year);
@@ -45,65 +35,36 @@ function getQuery($name, $state, $gender, $year, $length) {
     return $query;
 }
 
-function getResults($query) {
-    global $db;
-    $result = [];
-
-    $rows = mysqli_query($db, $query);
-    while ($row = mysqli_fetch_array($rows)) {
-        array_push($result, $row);
-    }
-    return $result;
-}
-
+// Grab input vals
 $name = sanitize($_POST['name']);
 $state = $_POST['state'];
 $gender = $_POST['gender'];
 $year = $_POST['year']; // No need to sanitize, parsing.
-$length = $_POST['length'];
 
-$query = getQuery($name, $state, $gender, $year, $length);
+// Query db
+$query = getQuery($name, $state, $gender, $year);
 $results = getResults($query);
 
+// Format for graph
 $data = [];
 foreach ($results as $row) {
     $dataRow = array("y" => $row[3], "label" => $row['year'] );
     array_push($data, $dataRow);
 }
-if (empty($data)) {
-    print("<h1>No data available.</h1>");
-}
 
+// Print page
 $graphTitleGender = $gender == BLANK_FIELD ? "M & F" : $gender;
 $graphTitleState = $state == BLANK_FIELD ? "All states" : $results[0]['fullName'];
 $graphTitle = "$name ($graphTitleGender, $graphTitleState)";
+
+printHeader("Name Search");
+
+if (empty($data)) {
+    print("<h1>No data available.</h1>");
+} else {
+    printChart($graphTitle, $data);
+}
+
+backButton();
+printFooter();
 ?>
-
-<body>
-<script>
-    window.onload = function() {
-        let dataPoints = <?php echo json_encode($data, JSON_NUMERIC_CHECK); ?>;
-        if (dataPoints.length == 0) {
-            return;
-        }
-
-        var chart = new CanvasJS.Chart("chartContainer", {
-            animationEnabled: true,
-            theme: "light2",
-            title:{
-                text: "<?php echo $graphTitle; ?>"
-            },
-            axisY: {
-                title: "Frequency"
-            },
-            data: [{
-                type: "column",
-                dataPoints: <?php echo json_encode($data, JSON_NUMERIC_CHECK); ?>
-            }]
-        });
-        chart.render();
-    }
-</script>
-    <div id="chartContainer" style="height: 75%; width: 100%;"></div>
-    <?php backButton(); ?>
-</body>
