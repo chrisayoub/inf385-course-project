@@ -14,7 +14,7 @@ function sanitize($input) {
 // Do a simple back button
 function backButton() {
     print(
-        "<input style=\"margin-top: 32px;\" type=\"button\" onclick=\"history.back()\" class=\"btn btn-black py-3 btn-block\" value=\"< Back\" />"
+        "<input style=\"margin-top: 32px;\" type=\"button\" onclick=\"location.href='index.php'\" class=\"btn btn-black py-3 btn-block\" value=\"< Back\" />"
     );
 }
 
