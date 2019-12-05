@@ -25,13 +25,8 @@ function renderTrendingPage($genderCode, $genderFullName, $pageName) {
         }
     }
 
-    print "<h1> Choose a year </h1>";
-    print "<form method=GET action='$pageName' class='text-center'><select name='time'>";
-    for ($i = YEAR_MAX; $i >= 2000; $i--) {
-        print "<option value='$i'> $i </option>";
-    }
-    print "</select>";
-    print "<input type='submit' name='submit' value='submit'></form>";
+    printYearPicker(YEAR_MAX, 2000, $pageName, 'time');
+    printSubmit();
 
     if ($doQuery) {
         // Format title

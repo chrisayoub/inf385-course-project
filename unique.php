@@ -38,15 +38,10 @@ if ($doQuery){
     echo "</ul>";
 }
 
-print "<h1> Choose a year: </h1>";
-print "<form method=GET action='unique.php' class='text-center'><select name='year'>";
-for ($i = YEAR_MAX; $i >= YEAR_MIN; $i--) {
-    print "<option value='$i'> $i </option>";
-}
-print "</select>";
+printYearPicker(YEAR_MAX, YEAR_MIN, 'unique.php', 'year');
 print "<h1> Choose a gender: </h1>";
 print "<select name='gender'><option value='M'>Male</option><option value='F'>Female</option></select>";
-print "<input type='submit' name='submit' value='submit'></form><br>";
+printSubmit();
 
 // Print back button
 backButton();

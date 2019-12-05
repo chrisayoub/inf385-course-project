@@ -83,6 +83,21 @@ function printChart($title, $data) {
 ");
 }
 
+// Common year picker
+function printYearPicker($max, $min, $pageName, $valueName) {
+    print "<h1> Choose a year </h1>";
+    print "<form method=GET action='$pageName' class='text-center'><select name='$valueName'>";
+    for ($i = $max; $i >= $min; $i--) {
+        print "<option value='$i'> $i </option>";
+    }
+    print "</select>";
+}
+
+// Common submit
+function printSubmit() {
+    print "<input type='submit' name='submit' value='submit'></form><br>";
+}
+
 // Data ranges
 define("YEAR_MIN", 1910);
 define("YEAR_MAX", 2018);
