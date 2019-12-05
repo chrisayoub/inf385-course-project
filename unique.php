@@ -26,33 +26,29 @@ function printHeader() {
 ");
 }
 
-function printResult ($data, $doQuery, $gender, $year){
         printHeader();
         global $db;
         $data = [];
         $doQuery = array_key_exists("year", $_GET);
         if ($doQuery){
+            $year = $_GET['year'];
+            $gender = $_GET['gender'];
+            $genderName = '';
             if ($gender == "M"){
-             $genderName = "Male";
-            }
-            else if($gender == "F"){
-             $genderName = "Female";
+                $genderName = "Male";
             }
             else {
-                $genderName = "Wow";
+                $genderName = "Female";
             }
-         }
-        $year = $_GET['year'];
-        $gender = $_GET['gender'];
-        $query = getQuery($year, $gender);
-        $result = [];
-        $rows = mysqli_query($db, $query);
-        echo "<h3>Most Unique $genderName Names in $year</h3>";
-        echo "<table><tr><th>Name</th><th>frequency</th><tr>";
-        while ($row = mysqli_fetch_array($rows)) {
-        echo "<tr><th>" . $row['name'] . "</th><th>" . $row['frequency'] . "</th></tr>";
+            $query = getQuery($year, $gender);
+            $result = [];
+            $rows = mysqli_query($db, $query);
+            echo "<h3>The Most Unique $genderName Names in $year</h3>";
+            echo "<table><tr><th>Name</th><th>frequency</th><tr>";
+            while ($row = mysqli_fetch_array($rows)) {
+                echo "<tr><th>" . $row['name'] . "</th><th>" . $row['frequency'] . "</th></tr>";
+            }
         }
-    }
 
     print "<h1> Choose a year: </h1>";
     print "<form method=GET action='unique.php' class='text-center'><select name='year'>";
@@ -62,8 +58,7 @@ function printResult ($data, $doQuery, $gender, $year){
     print "</select>";
     print "<h1> Choose a gender: </h1>";
     print "<select name='gender'><option value='M'>Male</option><option value='F'>Female</option></select>";
-    print "<input type='submit' name='submit' value='submit'></form>";
-    printResult($data, $doQuery, $gender, $year);
+    print "<input type='submit' name='submit' value='submit'></form><br>";
 
 
 
@@ -78,8 +73,6 @@ function printResult ($data, $doQuery, $gender, $year){
         // }
 
 //Edited - added semicolon at the End of line.1st and 4th(prev) line
-
-    
 
     // Print back button
     backButton();

@@ -263,9 +263,8 @@ function mapToOptionList($map) {
                 <img src="images/unique.jpg" style="height:190px; width:330px" alt="Image" class="img-fluid">
               </a>
               <div class="post-entry-1-contents">
-
                 <h2>
-                  <a href="unique.php"The Most Unique Names</a>
+                  <a href="unique.php">The Most Unique Names</a>
                 </h2>
                 <p>Tired of having the same with others? Check out the most unique names here!</p>
               </div>
