@@ -11,10 +11,6 @@
 // DB credentials
 include 'db.php';
 
-// Indicates field was unspecified
-const BLANK_FIELD = "all";
-const BLANK_TEXT_FIELD = "";
-
 // Gets a query based on the supplied fields
 function getQuery($name, $state, $gender, $year, $length) {
     $yearVal = -1;

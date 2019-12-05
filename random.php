@@ -18,9 +18,6 @@ body {
 // DB credentials
 include 'db.php';
 
-// Indicates field was unspecified
-const BLANK_FIELD = "all";
-
 function getQuery($gender, $N) {
     $query = "SELECT name FROM distinctNamesWithSex ";
     if ($gender !== BLANK_FIELD) {
@@ -35,12 +32,12 @@ $N = $_POST['number'];
 $query = getQuery($gender, $N);
 $rows = mysqli_query($db, $query);
 echo "<h1>Here are some options:</h1>";
-echo "<table>";
+echo "<ul>";
 while ($row = mysqli_fetch_array($rows)) {
-    echo "<tr><th>" . $row['name'] . "<th/></tr>";
+    echo "<li>" . $row['name'] . "</li>";
 }
+echo "</ul>";
 
-echo "</table>";
 backButton();
 ?>
 </body>

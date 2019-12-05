@@ -5,7 +5,7 @@ include 'db.php';
 // Get query for top names by year and gender
 function getQuery($year, $gender) {
     return
-        "SELECT name, frequency FROM names JOIN states WHERE sex = '$gender' AND year = $year 
+        "SELECT name, frequency FROM names WHERE sex = '$gender' AND year = $year 
                 GROUP BY frequency DESC LIMIT 20";
 }
 
@@ -92,7 +92,7 @@ function renderTrendingPage($genderCode, $genderFullName, $pageName) {
 
     print "<h1> Choose a year </h1>";
     print "<form method=GET action='$pageName' class='text-center'><select name='time'>";
-    for ($i = 2018; $i >= 2000; $i--) {
+    for ($i = YEAR_MAX; $i >= 2000; $i--) {
         print "<option value='$i'> $i </option>";
     }
     print "</select>";
