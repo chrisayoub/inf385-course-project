@@ -4,6 +4,8 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <title>Name Search</title>
 </head>
 
 <?php
