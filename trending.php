@@ -5,8 +5,8 @@ include 'db.php';
 // Get query for top names by year and gender
 function getQuery($year, $gender) {
     return
-        "SELECT name, frequency FROM names WHERE sex = '$gender' AND year = $year 
-                GROUP BY frequency DESC LIMIT 20";
+        "SELECT name, SUM(frequency) AS f FROM names WHERE sex = '$gender' AND year = $year
+                    GROUP BY name ORDER BY f DESC LIMIT 20";
 }
 
 function renderTrendingPage($genderCode, $genderFullName, $pageName) {
@@ -20,7 +20,7 @@ function renderTrendingPage($genderCode, $genderFullName, $pageName) {
         $query = getQuery($time, $genderCode);
         $result = getResults($query);
         foreach ($result as $r) {
-            $dataRow = array("y" => $r['frequency'], "label" => $r['name']);
+            $dataRow = array("y" => $r['f'], "label" => $r['name']);
             array_push($data, $dataRow);
         }
     }
